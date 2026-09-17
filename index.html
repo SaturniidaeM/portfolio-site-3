@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вероника Лукаш — художник · геймдизайнер</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Jura:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Курсор: звезда + гало -->
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="cursor" id="cursor"></div>
+
+<!-- Декоративный фон -->
+<div class="bg-shapes" aria-hidden="true">
+
+  <div class="shape-group active" data-group="0">
+    <span class="shape shape--triangle shape--green" style="top:8%; left:5%; width:220px; height:200px;"></span>
+    <span class="shape shape--hex shape--red" style="top:14%; right:7%; width:260px; height:260px;"></span>
+    <span class="star star--sm" style="top:22%; left:28%; animation-delay:-.4s;"></span>
+    <span class="star star--md" style="top:48%; left:12%; animation-delay:-1.2s;"></span>
+    <span class="star star--sm" style="top:35%; right:22%; animation-delay:-2s;"></span>
+    <span class="star star--lg" style="top:62%; right:8%; animation-delay:-.8s;"></span>
+
+    <span class="emoji emoji--lg" style="top:72%; left:8%; animation-delay:-1s;">(￣ρ￣)..zzZZ</span>
+    <span class="emoji emoji--red" style="top:28%; left:52%; animation-delay:-3s;">(´｡• ω •｡`) ♡</span>
+
+    <span class="num67" style="top:18%; left:38%; animation-delay:-.5s;">67</span>
+    <span class="num67 num67--red" style="top:58%; left:20%; animation-delay:-2s;">67</span>
+    <span class="num67 num67--lg" style="top:80%; right:22%; animation-delay:-3.5s;">67</span>
+    <span class="num67 num67--red num67--sm" style="top:42%; right:38%; animation-delay:-4.5s;">67</span>
+  </div>
+
+  <div class="shape-group" data-group="1">
+    <span class="shape shape--diamond shape--green" style="top:12%; left:8%; width:200px; height:200px;"></span>
+    <span class="shape shape--pentagon shape--red" style="top:20%; right:5%; width:220px; height:220px;"></span>
+    <span class="shape shape--chevron shape--green" style="bottom:18%; left:40%; width:180px; height:180px;"></span>
+    <span class="star star--md" style="top:30%; left:45%; animation-delay:-.6s;"></span>
+    <span class="star star--sm" style="top:70%; left:20%; animation-delay:-1.4s;"></span>
+    <span class="star star--lg" style="top:55%; right:15%; animation-delay:-2.2s;"></span>
+    <span class="star star--sm" style="bottom:14%; right:40%; animation-delay:-1s;"></span>
+
+    <span class="emoji" style="top:78%; left:62%; animation-delay:-2s;">(=^‥^=)</span>
+    <span class="emoji emoji--red emoji--lg" style="top:14%; left:26%; animation-delay:-4s;">／(＞×＜)＼</span>
+
+    <span class="num67 num67--lg" style="top:35%; left:60%; animation-delay:-1s;">67</span>
+    <span class="num67 num67--red" style="top:60%; right:30%; animation-delay:-2.5s;">67</span>
+    <span class="num67 num67--sm" style="bottom:22%; left:12%; animation-delay:-3.8s;">67</span>
+    <span class="num67 num67--red num67--lg" style="top:8%; left:48%; animation-delay:-5s;">67</span>
+  </div>
+
+  <div class="shape-group" data-group="2">
+    <span class="shape shape--diamond shape--red" style="top:15%; left:10%; width:180px; height:180px;"></span>
+    <span class="shape shape--triangle shape--green" style="top:22%; right:8%; width:180px; height:170px;"></span>
+    <span class="shape shape--hex shape--red" style="bottom:12%; left:22%; width:200px; height:200px;"></span>
+    <span class="star star--lg" style="top:35%; left:50%; animation-delay:-.3s;"></span>
+    <span class="star star--md" style="top:60%; left:8%; animation-delay:-1.5s;"></span>
+    <span class="star star--sm" style="top:75%; right:15%; animation-delay:-2.4s;"></span>
+    <span class="star star--sm" style="top:25%; right:35%; animation-delay:-.9s;"></span>
+
+    <span class="emoji emoji--lg" style="bottom:22%; right:6%; animation-delay:-.8s;">(´｡• ω •｡`) ♡</span>
+    <span class="emoji" style="top:48%; right:28%; animation-delay:-2.6s;">(￣ρ￣)..zzZZ</span>
+    <span class="emoji emoji--red" style="top:18%; left:42%; animation-delay:-4.2s;">(=^‥^=)</span>
+
+    <span class="num67" style="top:12%; left:62%; animation-delay:-.7s;">67</span>
+    <span class="num67 num67--red num67--lg" style="top:55%; left:35%; animation-delay:-2.2s;">67</span>
+    <span class="num67" style="bottom:28%; left:8%; animation-delay:-3.4s;">67</span>
+    <span class="num67 num67--red num67--sm" style="top:38%; right:12%; animation-delay:-4.8s;">67</span>
+  </div>
+
+</div>
+
+<!-- ============ ШАПКА ============ -->
+<header class="header">
+  <div class="container header__inner">
+    <div class="logo">VL<span>.</span></div>
+    <nav class="nav">
+      <a href="#about" data-i18n="nav.about">Обо мне</a>
+      <a href="#skills" data-i18n="nav.skills">Навыки</a>
+      <a href="#hobbies" data-i18n="nav.hobbies">Увлечения</a>
+      <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <div class="header__actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Мобильное меню -->
+<div class="nav-overlay" id="navOverlay">
+  <a href="#about" data-i18n="nav.about">Обо мне</a>
+  <a href="#skills" data-i18n="nav.skills">Навыки</a>
+  <a href="#hobbies" data-i18n="nav.hobbies">Увлечения</a>
+  <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <p class="hero__tag" data-i18n="hero.tag">// студентка · художник · геймдизайнер</p>
+    <h1 class="hero__title" data-i18n="hero.title">Лукаш<br><em>Вероника</em></h1>
+    <p class="hero__sub" data-i18n="hero.sub">
+      Создаю миры на стыке искусства и технологий: 3D-модели, игровые концепты
+      и визуальные истории, в которые хочется заглянуть.
+    </p>
+    <div class="hero__actions">
+      <a href="#contacts" class="btn btn--green" data-i18n="hero.btn1">Связаться</a>
+      <a href="#about" class="btn btn--red" data-i18n="hero.btn2">Обо мне</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ОБО МНЕ ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="section__title reveal" data-i18n="about.title">Обо <span>мне</span></h2>
+    <p class="section__lead reveal" data-i18n="about.lead">Немного о том, чем я живу и что меня вдохновляет.</p>
+
+    <div class="about__grid">
+      <div class="about__text reveal">
+        <p data-i18n="about.p1">
+          Привет! Я Вероника — студентка <strong>СПбГУПТД</strong> направления
+          «Промышленный дизайн» и художник. Мне одинаково близки и цифровое,
+          и материальное: я люблю придумывать форму, а потом оживлять её
+          в 3D или на бумаге.
+        </p>
+        <p data-i18n="about.p2">
+          Больше всего меня затягивает <strong>геймдев</strong> — это возможность
+          построить целый мир и задать ему правила. Я делаю
+          <strong>3D-модели</strong> персонажей и окружения, собираю сцены,
+          работаю с материалами и светом.
+        </p>
+        <p data-i18n="about.p3">
+          Параллельно занимаюсь <strong>дизайном</strong>: интерфейсы, айдентика,
+          композиция. Верю, что хороший дизайн — это когда красиво
+          и при этом понятно с первого взгляда.
+        </p>
+
+        <ul class="about__facts">
+          <li data-i18n="about.f1">СПбГУПТД · Промтехдизайн</li>
+          <li data-i18n="about.f2">3D-моделирование</li>
+          <li data-i18n="about.f3">Геймдев</li>
+          <li data-i18n="about.f4">Графический дизайн</li>
+        </ul>
+      </div>
+
+      <div class="photo-frame reveal">
+        <img src="image.jpg" alt="Вероника Лукаш — девушка в капюшоне и очках на фоне брусчатки в закатном свете">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ НАВЫКИ ============ -->
+<section class="section" id="skills">
+  <div class="container">
+    <h2 class="section__title reveal" data-i18n="skills.title">Навыки и <span>инструменты</span></h2>
+    <p class="section__lead reveal" data-i18n="skills.lead">Программы, в которых я работаю каждый день — от графики и моушена до 3D.</p>
+
+    <ul class="skills__grid reveal">
+      <li class="skill-card" style="--i:0; --level:95%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Adobe Photoshop</span>
+          <span class="skill-card__pct">95%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:1; --level:88%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Adobe Illustrator</span>
+          <span class="skill-card__pct">88%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:2; --level:85%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Figma</span>
+          <span class="skill-card__pct">85%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:3; --level:78%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Adobe After Effects</span>
+          <span class="skill-card__pct">78%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:4; --level:72%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Krita</span>
+          <span class="skill-card__pct">72%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:5; --level:65%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">VS Code</span>
+          <span class="skill-card__pct">65%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:6; --level:55%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Blender</span>
+          <span class="skill-card__pct">55%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ СЛАЙДЕР ============ -->
+<section class="section" id="hobbies">
+  <div class="container">
+    <h2 class="section__title reveal" data-i18n="hobbies.title">Чем я <span>горю</span></h2>
+    <p class="section__lead reveal" data-i18n="hobbies.lead">Три направления, между которыми живёт моё творчество, и то, что я люблю вне работы.</p>
+
+    <div class="slider reveal">
+      <div class="slider__viewport">
+        <div class="slider__track" id="track">
+
+          <article class="slide">
+            <p class="slide__num">01 / GAMEDEV</p>
+            <h3 class="slide__title" data-i18n="s1.title">Геймдев</h3>
+            <p class="slide__text" data-i18n="s1.text">
+              Придумываю игровые миры, механики и визуальный стиль проектов.
+              От первого наброска уровня до финального рендера — мне важно,
+              чтобы игрок поверил в этот мир и захотел в нём остаться.
+            </p>
+          </article>
+
+          <article class="slide">
+            <p class="slide__num">02 / 3D</p>
+            <h3 class="slide__title" data-i18n="s2.title">3D-моделирование</h3>
+            <p class="slide__text" data-i18n="s2.text">
+              Моделирую персонажей, предметы и окружение. Люблю работать
+              с формой и материалами: поймать нужный силуэт, настроить свет
+              и получить картинку, которая выглядит живой.
+            </p>
+          </article>
+
+          <article class="slide">
+            <p class="slide__num">03 / DESIGN</p>
+            <h3 class="slide__title" data-i18n="s3.title">Дизайн</h3>
+            <p class="slide__text" data-i18n="s3.text">
+              Интерфейсы, айдентика, композиция и типографика. Мой принцип простой:
+              дизайн должен быть выразительным, но не мешать человеку —
+              красота и понятность идут рука об руку.
+            </p>
+          </article>
+
+          <article class="slide">
+            <p class="slide__num">04 / FORMULA 1</p>
+            <h3 class="slide__title" data-i18n="s4.title">Формула 1 · Ferrari</h3>
+            <p class="slide__text" data-i18n="s4.text">
+              Болею за Скудерию с самого детства. Скорость, стратегия, инженерия
+              и та самая красная машина — для меня это больше, чем спорт.
+              Слежу за каждым Гран-при и верю в следующий титул.
+            </p>
+            <button class="btn btn--red ride-btn" id="rideBtn" data-i18n="s4.btn">Поехали!</button>
+          </article>
+
+          <article class="slide">
+            <p class="slide__num">05 / RICK AND MORTY</p>
+            <h3 class="slide__title" data-i18n="s5.title">Рик и Морти</h3>
+            <p class="slide__text" data-i18n="s5.text">
+              Мульт, который умеет быть одновременно абсурдным и философским.
+              Люблю его за научную фантастику, безумные концепции и умение
+              за пару минут перевернуть с ног на голову целую вселенную.
+            </p>
+          </article>
+
+          <article class="slide">
+            <p class="slide__num">06 / SHOOTERS</p>
+            <h3 class="slide__title" data-i18n="s6.title">Шутеры: Overwatch · Marvel Rivals</h3>
+            <p class="slide__text" data-i18n="s6.text">
+              Динамичные командные шутеры с яркими героями и уникальными
+              способностями. Overwatch и Marvel Rivals — мои любимые арены,
+              где важны реакция, тактика и чувство команды.
+            </p>
+          </article>
+
+          <article class="slide">
+            <p class="slide__num">07 / VISUAL NOVELS</p>
+            <h3 class="slide__title" data-i18n="s7.title">Визуальные новеллы</h3>
+            <p class="slide__text" data-i18n="s7.text">
+              Истории, где сюжет и атмосфера важнее геймплея. Обожаю
+              погружаться в диалоги, принимать решения и смотреть,
+              как разветвляется повествование. Идеальный жанр для тех,
+              кто любит читать и играть одновременно.
+            </p>
+          </article>
+
+          <article class="slide">
+            <p class="slide__num">08 / TV SERIES</p>
+            <h3 class="slide__title" data-i18n="s8.title">Сериалы</h3>
+            <p class="slide__text" data-i18n="s8.text">
+              Хороший сериал для меня — это как длинное путешествие
+              с полюбившимися героями. Люблю за глубокие персонажи,
+              неожиданные повороты и возможность прожить несколько
+              жизней за один сезон.
+            </p>
+          </article>
+
+          <article class="slide">
+            <p class="slide__num">09 / DnD</p>
+            <h3 class="slide__title" data-i18n="s9.title">Dungeons &amp; Dragons</h3>
+            <p class="slide__text" data-i18n="s9.text">
+              Настольные ролевые игры — это чистое творчество.
+              Придумываю персонажей, импровизирую, бросаю кубики
+              и вместе с друзьями создаю историю, которую никто
+              не сможет повторить. Магия, которая рождается за столом.
+            </p>
+          </article>
+
+          <article class="slide">
+            <p class="slide__num">10 / WILL WOOD</p>
+            <h3 class="slide__title" data-i18n="s10.title">Will Wood · Dark Cabaret</h3>
+            <p class="slide__text" data-i18n="s10.text">
+              Музыка Will Wood — это театр одного безумца. Смесь карнавального
+              дарк-кабаре, панк-рока и эмоционального стриптиза. Его песни —
+              это истории о ментальных расстройствах, неловкости бытия и поиске
+              красоты в хаосе, где за абсурдным юмором и виртуозным фортепиано
+              всегда прячется невероятно уязвимый смысл.
+            </p>
+            <p class="slide__text slide__text--list" data-i18n="s10.list">
+              <strong>«Against The Kitchen Floor»</strong> — гимн непринятию себя и страху близости. Крик человека, который чувствует себя «бракованным товаром».<br>
+              <strong>«Tomcat Disposables»</strong> — трагикомичная история о мыши, попавшей в ловушку. Метафора несправедливости жизни, написанная как дань уважения случайно убитому грызуну.<br>
+              <strong>«2econd 2ight 2eer»</strong> — манифест «сумасшедшего» как свободного человека. Песня о принятии своей инаковости и отказе быть удобным для общества.
+            </p>
+            <p class="slide__text slide__text--quote" data-i18n="s10.quote">
+              «Мне нравится, как он превращает личный хаос в невероятно цепляющее и честное искусство. Каждая песня — это маленький спектакль, который заставляет смеяться и одновременно разрывает сердце.»
+            </p>
+          </article>
+
+          <article class="slide slide--quote">
+            <p class="slide__num">11 / QUOTE</p>
+            <h3 class="slide__title" data-i18n="s11.title">«Хороший дизайн незаметен — замечают только эмоцию»</h3>
+            <p class="slide__text" data-i18n="s11.text">— моё личное правило в работе</p>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="slider__controls">
+        <div class="slider__arrows">
+          <button class="arrow" id="prev" aria-label="Назад">←</button>
+          <button class="arrow" id="next" aria-label="Вперёд">→</button>
+        </div>
+        <div class="slider__dots" id="dots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ КОНТАКТЫ ============ -->
+<section class="section" id="contacts">
+  <div class="container">
+    <h2 class="section__title reveal" data-i18n="contacts.title">Контакты и <span>обратная связь</span></h2>
+    <p class="section__lead reveal" data-i18n="contacts.lead">Открыта к коллаборациям, проектам и просто хорошим разговорам.</p>
+
+    <div class="contacts__grid">
+
+      <div class="reveal">
+        <ul class="contact-list">
+          <li>
+            <span class="label" data-i18n="contacts.email">Email</span>
+            <a href="mailto:coolleshka6@gmail.com">coolleshka6@gmail.com</a>
+          </li>
+          <li>
+            <span class="label" data-i18n="contacts.phone">Телефон</span>
+            <a href="tel:+79915846631">+7 991 584 66 31</a>
+          </li>
+        </ul>
+
+        <div class="socials">
+          <a class="social" href="https://vk.ru/vampirskaya.podstilka" target="_blank" rel="noopener">VK</a>
+          <a class="social" href="https://t.me/silochka_saitik" target="_blank" rel="noopener">TELEGRAM</a>
+        </div>
+      </div>
+
+      <form class="form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name" data-i18n="form.name">Имя</label>
+          <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" data-i18n-placeholder="form.namePh" required>
+        </div>
+        <div class="field">
+          <label for="email" data-i18n="form.email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="message" data-i18n="form.message">Сообщение</label>
+          <textarea id="message" name="message" placeholder="Расскажите о вашей идее..." data-i18n-placeholder="form.messagePh" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--green" data-i18n="form.send">Отправить</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ УДИВИ МЕНЯ ============ -->
+<section class="surprise-section reveal">
+  <div class="container surprise-section__inner">
+    <p class="surprise-section__hint" data-i18n="surprise.hint">Не знаешь, что дальше? Жми.</p>
+    <button class="btn btn--green surprise-btn" id="surpriseBtn" data-i18n="surprise.btn">Удиви меня</button>
+  </div>
+</section>
+
+<!-- ============ ФУТЕР ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <p data-i18n="footer.copy">© 2026 <span>Вероника Лукаш</span>. Все права защищены.</p>
+    <p data-i18n="footer.made">Verity</p>
+  </div>
+</footer>
+
+<!-- Кнопка «наверх» -->
+<button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+<!-- Тост -->
+<div class="toast" id="toast" data-i18n="toast.sent">✓ Сообщение отправлено!</div>
+
+<script>
+/* ============ ПЕРЕВОДЫ ============ */
+const translations = {
+  ru: {
+    'nav.about': 'Обо мне',
+    'nav.skills': 'Навыки',
+    'nav.hobbies': 'Увлечения',
+    'nav.contacts': 'Контакты',
+    'hero.tag': '// студентка · художник · геймдизайнер',
+    'hero.title': 'Лукаш<br><em>Вероника</em>',
+    'hero.sub': 'Создаю миры на стыке искусства и технологий: 3D-модели, игровые концепты и визуальные истории, в которые хочется заглянуть.',
+    'hero.btn1': 'Связаться',
+    'hero.btn2': 'Обо мне',
+    'about.title': 'Обо <span>мне</span>',
+    'about.lead': 'Немного о том, чем я живу и что меня вдохновляет.',
+    'about.p1': 'Привет! Я Вероника — студентка <strong>СПбГУПТД</strong> направления «Промышленный дизайн» и художник. Мне одинаково близки и цифровое, и материальное: я люблю придумывать форму, а потом оживлять её в 3D или на бумаге.',
+    'about.p2': 'Больше всего меня затягивает <strong>геймдев</strong> — это возможность построить целый мир и задать ему правила. Я делаю <strong>3D-модели</strong> персонажей и окружения, собираю сцены, работаю с материалами и светом.',
+    'about.p3': 'Параллельно занимаюсь <strong>дизайном</strong>: интерфейсы, айдентика, композиция. Верю, что хороший дизайн — это когда красиво и при этом понятно с первого взгляда.',
+    'about.f1': 'СПбГУПТД · Промтехдизайн',
+    'about.f2': '3D-моделирование',
+    'about.f3': 'Геймдев',
+    'about.f4': 'Графический дизайн',
+    'skills.title': 'Навыки и <span>инструменты</span>',
+    'skills.lead': 'Программы, в которых я работаю каждый день — от графики и моушена до 3D.',
+    'hobbies.title': 'Чем я <span>горю</span>',
+    'hobbies.lead': 'Три направления, между которыми живёт моё творчество, и то, что я люблю вне работы.',
+    's1.title': 'Геймдев',
+    's1.text': 'Придумываю игровые миры, механики и визуальный стиль проектов. От первого наброска уровня до финального рендера — мне важно, чтобы игрок поверил в этот мир и захотел в нём остаться.',
+    's2.title': '3D-моделирование',
+    's2.text': 'Моделирую персонажей, предметы и окружение. Люблю работать с формой и материалами: поймать нужный силуэт, настроить свет и получить картинку, которая выглядит живой.',
+    's3.title': 'Дизайн',
+    's3.text': 'Интерфейсы, айдентика, композиция и типографика. Мой принцип простой: дизайн должен быть выразительным, но не мешать человеку — красота и понятность идут рука об руку.',
+    's4.title': 'Формула 1 · Ferrari',
+    's4.text': 'Болею за Скудерию с самого детства. Скорость, стратегия, инженерия и та самая красная машина — для меня это больше, чем спорт. Слежу за каждым Гран-при и верю в следующий титул.',
+    's4.btn': 'Поехали!',
+    's5.title': 'Рик и Морти',
+    's5.text': 'Мульт, который умеет быть одновременно абсурдным и философским. Люблю его за научную фантастику, безумные концепции и умение за пару минут перевернуть с ног на голову целую вселенную.',
+    's6.title': 'Шутеры: Overwatch · Marvel Rivals',
+    's6.text': 'Динамичные командные шутеры с яркими героями и уникальными способностями. Overwatch и Marvel Rivals — мои любимые арены, где важны реакция, тактика и чувство команды.',
+    's7.title': 'Визуальные новеллы',
+    's7.text': 'Истории, где сюжет и атмосфера важнее геймплея. Обожаю погружаться в диалоги, принимать решения и смотреть, как разветвляется повествование. Идеальный жанр для тех, кто любит читать и играть одновременно.',
+    's8.title': 'Сериалы',
+    's8.text': 'Хороший сериал для меня — это как длинное путешествие с полюбившимися героями. Люблю за глубокие персонажи, неожиданные повороты и возможность прожить несколько жизней за один сезон.',
+    's9.title': 'Dungeons & Dragons',
+    's9.text': 'Настольные ролевые игры — это чистое творчество. Придумываю персонажей, импровизирую, бросаю кубики и вместе с друзьями создаю историю, которую никто не сможет повторить. Магия, которая рождается за столом.',
+    's10.title': 'Will Wood · Dark Cabaret',
+    's10.text': 'Музыка Will Wood — это театр одного безумца. Смесь карнавального дарк-кабаре, панк-рока и эмоционального стриптиза. Его песни — это истории о ментальных расстройствах, неловкости бытия и поиске красоты в хаосе, где за абсурдным юмором и виртуозным фортепиано всегда прячется невероятно уязвимый смысл.',
+    's10.list': '<strong>«Against The Kitchen Floor»</strong> — гимн непринятию себя и страху близости. Крик человека, который чувствует себя «бракованным товаром».<br><strong>«Tomcat Disposables»</strong> — трагикомичная история о мыши, попавшей в ловушку. Метафора несправедливости жизни, написанная как дань уважения случайно убитому грызуну.<br><strong>«2econd 2ight 2eer»</strong> — манифест «сумасшедшего» как свободного человека. Песня о принятии своей инаковости и отказе быть удобным для общества.',
+    's10.quote': '«Мне нравится, как он превращает личный хаос в невероятно цепляющее и честное искусство. Каждая песня — это маленький спектакль, который заставляет смеяться и одновременно разрывает сердце.»',
+    's11.title': '«Хороший дизайн незаметен — замечают только эмоцию»',
+    's11.text': '— моё личное правило в работе',
+    'contacts.title': 'Контакты и <span>обратная связь</span>',
+    'contacts.lead': 'Открыта к коллаборациям, проектам и просто хорошим разговорам.',
+    'contacts.email': 'Email',
+    'contacts.phone': 'Телефон',
+    'form.name': 'Имя',
+    'form.namePh': 'Как к вам обращаться?',
+    'form.email': 'Email',
+    'form.message': 'Сообщение',
+    'form.messagePh': 'Расскажите о вашей идее...',
+    'form.send': 'Отправить',
+    'surprise.hint': 'Не знаешь, что дальше? Жми.',
+    'surprise.btn': 'Удиви меня',
+    'footer.copy': '© 2026 <span>Вероника Лукаш</span>. Все права защищены.',
+    'footer.made': 'Verity',
+    'toast.sent': '✓ Сообщение отправлено!'
+  },
+  en: {
+    'nav.about': 'About',
+    'nav.skills': 'Skills',
+    'nav.hobbies': 'Passions',
+    'nav.contacts': 'Contacts',
+    'hero.tag': '// student · artist · game designer',
+    'hero.title': 'Lukash<br><em>Veronika</em>',
+    'hero.sub': 'I craft worlds where art meets technology — 3D models, game concepts and visual stories you actually want to step into.',
+    'hero.btn1': 'Get in touch',
+    'hero.btn2': 'About me',
+    'about.title': 'About <span>me</span>',
+    'about.lead': 'A little about what I live for and what drives me.',
+    'about.p1': "Hi! I'm Veronika — a student at <strong>SPbSUITD</strong> (Industrial Design) and an artist. I love both digital and physical form: coming up with a shape first, then bringing it to life in 3D or on paper.",
+    'about.p2': 'What pulls me in the most is <strong>gamedev</strong> — the chance to build a whole world and set its rules. I create <strong>3D models</strong> of characters and environments, assemble scenes, and work with materials and light.',
+    'about.p3': "Alongside that, I do <strong>design</strong>: interfaces, identity, composition. My belief is simple — good design is when it's beautiful and obvious at the same time.",
+    'about.f1': 'SPbSUITD · Industrial Design',
+    'about.f2': '3D Modeling',
+    'about.f3': 'Gamedev',
+    'about.f4': 'Graphic Design',
+    'skills.title': 'Skills & <span>tools</span>',
+    'skills.lead': 'Software I use every day — from graphics and motion to 3D.',
+    'hobbies.title': "What I'm <span>passionate about</span>",
+    'hobbies.lead': 'Three directions my creativity lives in — plus what I love outside of work.',
+    's1.title': 'Gamedev',
+    's1.text': 'I design game worlds, mechanics and visual style. From the first level sketch to the final render — what matters to me is that the player believes in this world and wants to stay in it.',
+    's2.title': '3D Modeling',
+    's2.text': 'I model characters, props and environments. I love working with form and materials — catching the right silhouette, tuning the light and getting an image that truly looks alive.',
+    's3.title': 'Design',
+    's3.text': 'Interfaces, branding, composition, typography. My principle is simple — design should be expressive without getting in the way. Beauty and clarity go hand in hand.',
+    's4.title': 'Formula 1 · Ferrari',
+    's4.text': "A Scuderia fan since childhood. Speed, strategy, engineering and that unmistakable red car — for me it's more than a sport. I follow every Grand Prix and keep believing in the next title.",
+    's4.btn': "Let's go!",
+    's5.title': 'Rick and Morty',
+    's5.text': 'A show that manages to be absurd and philosophical at the same time. I love it for the sci-fi ideas, wild concepts and its ability to flip an entire universe upside down in a couple of minutes.',
+    's6.title': 'Shooters: Overwatch · Marvel Rivals',
+    's6.text': 'Fast-paced team shooters with bright heroes and unique abilities. Overwatch and Marvel Rivals are my favourite arenas — reflex, tactics and a sense of team matter here.',
+    's7.title': 'Visual Novels',
+    's7.text': 'Stories where plot and atmosphere matter more than gameplay. I love diving into dialogue, making choices and watching the narrative branch out. Perfect for those who like to read and play.',
+    's8.title': 'TV Series',
+    's8.text': "A good series feels like a long journey with characters you've grown to love. I'm here for deep characters, unexpected twists and the chance to live a few extra lives per season.",
+    's9.title': 'Dungeons & Dragons',
+    's9.text': 'Tabletop role-playing is pure creativity. Inventing characters, improvising, rolling dice and building a story together with friends that nobody else can repeat. Magic born at the table.',
+    's10.title': 'Will Wood · Dark Cabaret',
+    's10.text': "Will Wood's music is a one-man theater of the absurd. A blend of carnivalesque dark cabaret, punk rock, and emotional striptease. His songs are stories about mental illness, the awkwardness of existence, and finding beauty in chaos, where an incredibly vulnerable meaning always hides behind absurd humor and virtuosic piano.",
+    's10.list': '<strong>«Against The Kitchen Floor»</strong> — an anthem of self-rejection and fear of intimacy. The scream of a person who feels like «damaged goods».<br><strong>«Tomcat Disposables»</strong> — a tragicomic story of a mouse caught in a trap. A metaphor for life\'s unfairness, written as a tribute to a rodent he accidentally killed.<br><strong>«2econd 2ight 2eer»</strong> — a manifesto of the «madman» as a free person. A song about embracing one\'s otherness and refusing to be convenient for society.',
+    's10.quote': '«I love how he turns personal chaos into incredibly catchy and honest art. Each song is a little performance that makes you laugh and breaks your heart at the same time.»',
+    's11.title': '"Good design goes unnoticed — only the emotion stays"',
+    's11.text': '— my personal rule of work',
+    'contacts.title': 'Contacts & <span>feedback</span>',
+    'contacts.lead': 'Open to collaborations, projects and just good conversations.',
+    'contacts.email': 'Email',
+    'contacts.phone': 'Phone',
+    'form.name': 'Name',
+    'form.namePh': 'What should I call you?',
+    'form.email': 'Email',
+    'form.message': 'Message',
+    'form.messagePh': 'Tell me about your idea...',
+    'form.send': 'Send',
+    'surprise.hint': "Don't know what's next? Hit it.",
+    'surprise.btn': 'Surprise me',
+    'footer.copy': '© 2026 <span>Veronika Lukash</span>. All rights reserved.',
+    'footer.made': 'Verity',
+    'toast.sent': '✓ Message sent!'
+  }
+};
+
+let currentLang = 'ru';
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const val = translations[lang][el.dataset.i18n];
+    if (val === undefined) return;
+    if (val.includes('<')) el.innerHTML = val;
+    else el.textContent = val;
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const val = translations[lang][el.dataset.i18nPlaceholder];
+    if (val !== undefined) el.placeholder = val;
+  });
+
+  document.getElementById('langToggle').textContent = lang === 'ru' ? 'EN' : 'RU';
+}
+
+document.getElementById('langToggle').addEventListener('click', () => {
+  applyLang(currentLang === 'ru' ? 'en' : 'ru');
+});
+
+/* ============ КУРСОР: ЗВЕЗДА + ГАЛО ============ */
+const cursor = document.getElementById('cursor');
+const cursorGlow = document.getElementById('cursorGlow');
+
+let mouseX = innerWidth / 2, mouseY = innerHeight / 2;
+let curX = mouseX, curY = mouseY;
+let glowX = mouseX, glowY = mouseY;
+
+const FOLLOW = 0.4;
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+(function followCursor() {
+  curX += (mouseX - curX) * FOLLOW;
+  curY += (mouseY - curY) * FOLLOW;
+  cursor.style.transform = `translate3d(${curX}px, ${curY}px, 0) translate(-50%, -50%)`;
+  requestAnimationFrame(followCursor);
+})();
+
+(function followGlow() {
+  glowX += (mouseX - glowX) * FOLLOW;
+  glowY += (mouseY - glowY) * FOLLOW;
+  cursorGlow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0) translate(-50%, -50%)`;
+  requestAnimationFrame(followGlow);
+})();
+
+document.querySelectorAll('a, button, input, textarea').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.classList.add('is-hover');
+    cursorGlow.classList.add('is-hover');
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.classList.remove('is-hover');
+    cursorGlow.classList.remove('is-hover');
+  });
+});
+
+/* ============ ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ ============ */
+const root = document.documentElement;
+const themeToggle = document.getElementById('themeToggle');
+
+themeToggle.addEventListener('click', () => {
+  const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = next;
+  themeToggle.textContent = next === 'dark' ? '☀' : '☾';
+});
+
+/* ============ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ ============ */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ============ СМЕНА ГРУПП ФИГУР ПРИ СКРОЛЛЕ ============ */
+const shapeGroups = document.querySelectorAll('.shape-group');
+
+function updateShapeGroups() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = max > 0 ? window.scrollY / max : 0;
+  const idx = Math.min(shapeGroups.length - 1, Math.floor(progress * shapeGroups.length));
+  shapeGroups.forEach((g, i) => g.classList.toggle('active', i === idx));
+}
+window.addEventListener('scroll', updateShapeGroups);
+window.addEventListener('resize', updateShapeGroups);
+updateShapeGroups();
+
+/* ============ БУРГЕР-МЕНЮ ============ */
+const burger = document.getElementById('burger');
+const navOverlay = document.getElementById('navOverlay');
+
+function closeMenu() {
+  burger.classList.remove('is-open');
+  navOverlay.classList.remove('show');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+if (burger && navOverlay) {
+  burger.addEventListener('click', () => {
+    const isOpen = burger.classList.toggle('is-open');
+    navOverlay.classList.toggle('show', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  navOverlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+
+  // закрытие по Esc
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && burger.classList.contains('is-open')) closeMenu();
+  });
+}
+
+/* ============ КНОПКА "НАВЕРХ" ============ */
+const toTop = document.getElementById('toTop');
+
+if (toTop) {
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('show', window.scrollY > 400);
+  });
+  toTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ============ СЛАЙДЕР ============ */
+const track = document.getElementById('track');
+const slides = Array.from(track.children);
+const dotsBox = document.getElementById('dots');
+let index = 0;
+let timer = null;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'dot';
+  dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+  dot.addEventListener('click', () => goTo(i));
+  dotsBox.appendChild(dot);
+});
+
+function goTo(i) {
+  index = (i + slides.length) % slides.length;
+  track.style.transform = `translateX(-${index * 100}%)`;
+  Array.from(dotsBox.children).forEach((d, k) => d.classList.toggle('active', k === index));
+  restartAutoplay();
+}
+
+function restartAutoplay() {
+  clearInterval(timer);
+  timer = setInterval(() => goTo(index + 1), 5000);
+}
+
+document.getElementById('prev').addEventListener('click', () => goTo(index - 1));
+document.getElementById('next').addEventListener('click', () => goTo(index + 1));
+
+const slider = document.querySelector('.slider');
+slider.addEventListener('mouseenter', () => clearInterval(timer));
+slider.addEventListener('mouseleave', restartAutoplay);
+
+goTo(0);
+
+/* ============ ФОРМА + ТОСТ ============ */
+const form = document.getElementById('contactForm');
+const toast = document.getElementById('toast');
+let toastTimer = null;
+
+function showToast(text) {
+  toast.textContent = text;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  showToast(translations[currentLang]['toast.sent']);
+  form.reset();
+});
+
+/* ============ ПРОЛЕТАЮЩАЯ МАШИНКА ============ */
+const rideBtn = document.getElementById('rideBtn');
+const MACHINE_IMAGE = 'machine.png';
+
+if (rideBtn) {
+  rideBtn.addEventListener('click', () => {
+    const img = document.createElement('img');
+    img.src = MACHINE_IMAGE;
+    img.alt = '';
+    img.className = 'flying-machine';
+    document.body.appendChild(img);
+
+    img.addEventListener('animationend', () => img.remove());
+    img.addEventListener('error', () => img.remove());
+  });
+}
+
+/* ============ "УДИВИ МЕНЯ" — BOOM.PNG ============ */
+const surpriseBtn = document.getElementById('surpriseBtn');
+const BOOM_IMAGE = 'boom.png';
+
+if (surpriseBtn) {
+  surpriseBtn.addEventListener('click', () => {
+    const img = document.createElement('img');
+    img.src = BOOM_IMAGE;
+    img.alt = '';
+    img.className = 'boom-img';
+    document.body.appendChild(img);
+
+    img.addEventListener('animationend', () => img.remove());
+    img.addEventListener('error', () => img.remove());
+  });
+}
+</script>
+
+</body>
+</html>
