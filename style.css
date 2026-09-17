@@ -1071,7 +1071,7 @@ ul { list-style: none; }
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 520px;
+  width: 2000px;
   height: auto;
   margin: 0;
   pointer-events: none;
@@ -1272,7 +1272,7 @@ ul { list-style: none; }
   }
 
   /* уменьшаем картинки-триггеры */
-  .boom-img { width: 280px; }
+  .boom-img { width: 500px; }
   .flying-machine { height: 100px; margin-top: -50px; }
 
   /* прячем часть фонового декора на телефоне — чтобы не мешало */
